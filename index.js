@@ -37,9 +37,10 @@ dob.setCustomValidity("");
 }
 }
 
+let userdata = []
 //local storage of data
 const saveForm = (event) => {
-    let userdata = []
+    
     event.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -91,4 +92,5 @@ const displaydata = () => {
     let details = document.getElementById("entries");
     details.innerHTML = table;
 }
+displaydata();
 
