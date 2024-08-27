@@ -31,7 +31,10 @@ function dobvalidate(dob) {
     if (birthdate < minDate || birthdate > maxDate) {
         dob.setCustomValidity("age must between 55 and 18");
         dob.reportValidity();
-    }
+    }else
+{
+dob.setCustomValidity("");
+}
 }
 
 //local storage of data
