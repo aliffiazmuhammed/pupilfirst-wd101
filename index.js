@@ -31,16 +31,24 @@ function dobvalidate(dob) {
     if (birthdate < minDate || birthdate > maxDate) {
         dob.setCustomValidity("age must between 55 and 18");
         dob.reportValidity();
-    }else
-{
-dob.setCustomValidity("");
+    } else {
+        dob.setCustomValidity("");
+    }
 }
+function ifdata() {
+    let data = localStorage.getItem("data")
+    if (data) {
+        data = JSON.parse(data)
+        return data
+    } else {
+        data = []
+        return data
+    }
 }
-
-let userdata = []
+let userdata = ifdata()
 //local storage of data
 const saveForm = (event) => {
-    
+
     event.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -92,5 +100,6 @@ const displaydata = () => {
     let details = document.getElementById("entries");
     details.innerHTML = table;
 }
-displaydata();
+
+displaydata()
 
